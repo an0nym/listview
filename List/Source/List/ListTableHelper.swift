@@ -8,30 +8,37 @@
 
 import UIKit
 
-class ListTableHelper: NSObject {
+protocol ListTableHelperDelegate {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+}
 
+class ListTableHelper: NSObject {
+  
+  //Create delegate property
+  var dlgt: ListTableHelperDelegate?
+  
+  override init() {
+    super.init()
+  }
 }
 
 extension ListTableHelper : UITableViewDelegate {
-  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    self.dlgt?.tableView(tableView, didSelectRowAt: indexPath)
+  }
 }
 
 extension ListTableHelper : UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    var cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.identifier, for: indexPath) as? ListTableViewCell
-    if (cell == nil) {
-      cell = ListTableViewCell.init(style: UITableViewCellStyle.default, reuseIdentifier: ListTableViewCell.identifier)
-    }
+    let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.identifier, for: indexPath) as? ListTableViewCell
     return cell!
   }
   
   func numberOfSections(in tableView: UITableView) -> Int {
-    // #warning Incomplete implementation, return the number of sections
-    return 0
+    return 1
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    // #warning Incomplete implementation, return the number of rows
-    return 0
+    return 10
   }
 }

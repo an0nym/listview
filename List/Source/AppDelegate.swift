@@ -15,7 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
+    //init
+    let listView = ListViewController.init(nibName: nil, bundle: nil)
+    
+    //initialize windows
+    self.window = UIWindow.init(frame: UIScreen.main.bounds)
+    self.window?.makeKeyAndVisible()
+    self.window?.rootViewController = listView
     return true
   }
 

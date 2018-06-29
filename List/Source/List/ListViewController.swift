@@ -24,20 +24,32 @@ class ListViewController: UIViewController {
   }
   
   override func viewDidLoad() {
-      super.viewDidLoad()
+    super.viewDidLoad()
+    self.configureView()
   }
   
   func configureView () {
+    //initiate tableview via code
     self.tableView = UITableView.init(frame: .zero)
     self.tableView.delegate = self.listTableHelper
     self.tableView.dataSource = self.listTableHelper
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
     tableView.register(ListTableViewCell.self, forCellReuseIdentifier: ListTableViewCell.identifier)
     self.view.addSubview(self.tableView)
+    // set delegate of list table helper to self
+    self.listTableHelper.dlgt = self;
     self.layoutConstraints()
   }
   
   func layoutConstraints () {
-    
+    self.tableView.snp.makeConstraints { (make) in
+      make.size.centerX.centerY.equalTo(self.view)
+    }
+  }
+}
+
+extension ListViewController : ListTableHelperDelegate {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    print(indexPath)
   }
 }

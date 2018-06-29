@@ -18,6 +18,7 @@ class ListTableViewCell: UITableViewCell {
     super.setSelected(selected, animated: animated)
   }
 
+  //return identifier as class name string
   static var identifier: String {
     return String(describing: self)
   }
