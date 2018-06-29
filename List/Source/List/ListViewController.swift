@@ -33,10 +33,13 @@ class ListViewController: UIViewController {
     //initiate dataModel
     ListDataModel.shared().initWithApi() { (error) in
       if (error is NSError) {
+        //show failed loader
         //failed
       }
       else {
+        //show success loader
         //succeed
+        self.tableView.reloadData()
       }
     }
     
