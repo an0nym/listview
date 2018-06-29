@@ -29,6 +29,17 @@ class ListViewController: UIViewController {
   }
   
   func configureView () {
+    //initiate loader
+    //initiate dataModel
+    ListDataModel.shared().initWithApi() { (error) in
+      if (error is NSError) {
+        //failed
+      }
+      else {
+        //succeed
+      }
+    }
+    
     //initiate tableview via code
     self.tableView = UITableView.init(frame: .zero)
     self.tableView.delegate = self.listTableHelper

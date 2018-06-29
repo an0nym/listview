@@ -31,14 +31,16 @@ class ListDataModel: NSObject {
     self.jsonModel = ListJsonModel.init(fromJson: data!)
   }
   
+//  func returnClosure() -> (Int,Int)->Int {
   //initiate data model with remote json file
-  func initWithRoute(route : String) {
-    /*
-     **
-     **
-     **   Implement API Fetch DataModel
-     **
-     **
-     */
+  func initWithApi(completion: @escaping (_ err: AnyObject) -> Void) {
+    let apiAdaptor = ApiAdapter.init()
+    apiAdaptor.get(endpoint: ApiAdapter.Endpoints.contactList) { (dictionary, error) in
+      if (dictionary != nil) {
+        let object = JSON(dictionary!)
+        self.jsonModel = ListJsonModel.init(fromJson: object)
+      }
+      completion(error as AnyObject)
+    }
   }
 }
