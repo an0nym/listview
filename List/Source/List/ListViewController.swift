@@ -29,6 +29,8 @@ class ListViewController: UIViewController {
   }
   
   func configureView () {
+    //view title
+    self.title = "List"
     //initiate loader
     //initiate dataModel
     ListDataModel.shared().initWithApi() { (error) in
@@ -64,6 +66,8 @@ class ListViewController: UIViewController {
 
 extension ListViewController : ListTableHelperDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    print(indexPath)
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    let viewController = storyboard.instantiateViewController(withIdentifier: "EditListViewController") as! EditListViewController
+    navigationController?.pushViewController(viewController, animated: true)
   }
 }

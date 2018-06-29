@@ -17,11 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     //init
     let listView = ListViewController.init(nibName: nil, bundle: nil)
-    
+    let navController = UINavigationController.init(rootViewController: listView)
     //initialize windows
     self.window = UIWindow.init(frame: UIScreen.main.bounds)
     self.window?.makeKeyAndVisible()
-    self.window?.rootViewController = listView
+    self.window?.rootViewController = navController
     return true
   }
 
