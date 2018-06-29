@@ -10,6 +10,7 @@ import UIKit
 
 class EditListViewController: UIViewController {
   
+  var selectedIndexPath : IndexPath!
   @IBOutlet weak var firstName: UITextField!
   @IBOutlet weak var middleName: UITextField!
   @IBOutlet weak var lastName: UITextField!
@@ -25,6 +26,7 @@ class EditListViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    //set placeholder
     self.iconView.image = UIImage(named: "user")
     self.firstName.placeholder = "firstName"
     self.middleName.placeholder = "middleName"
@@ -36,5 +38,22 @@ class EditListViewController: UIViewController {
     self.phone.placeholder = "phone"
     self.businessMobile.placeholder = "businessMobile"
     self.note.placeholder = "note"
+    
+    //set text
+    let data = ListDataModel.shared().dataModel.d.results[selectedIndexPath.row]
+    self.firstName!.text = data.firstName ?? ""
+    self.middleName.text = data.middleName ?? ""
+    self.lastName.text = data.lastName ?? ""
+    self.email.text = data.email ?? ""
+    self.businessPhone.text = data.businessPhone ?? ""
+    self.mobile.text = data.mobile ?? ""
+    self.BusinessEmail.text = data.businessEmail ?? ""
+    self.phone.text = data.phone ?? ""
+    self.businessMobile.text = data.businessMobile ?? ""
+    self.note.text = data.notes ?? ""
+  }
+  
+  @IBAction func btnSubmitSelected(_ sender: Any) {
+    //Submit action to call a PUT API to update the list
   }
 }

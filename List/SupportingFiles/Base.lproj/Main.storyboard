@@ -115,6 +115,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Kg-8Y-LSf">
                                                 <rect key="frame" x="125.5" y="530" width="49" height="30"/>
                                                 <state key="normal" title="Submit"/>
+                                                <connections>
+                                                    <action selector="btnSubmitSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M9s-TC-H19"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -158,7 +161,7 @@
                         <outlet property="businessMobile" destination="Hv8-UT-6uV" id="gXN-Lk-opX"/>
                         <outlet property="businessPhone" destination="Ymg-xv-CKa" id="3Ca-96-4bT"/>
                         <outlet property="email" destination="SZi-xD-mff" id="4AH-vg-F7L"/>
-                        <outlet property="firstName" destination="HYm-0Z-ght" id="ehm-Ql-NPC"/>
+                        <outlet property="firstName" destination="HYm-0Z-ght" id="nve-UD-iNU"/>
                         <outlet property="iconView" destination="DdO-ci-fG2" id="fHO-Aq-xeW"/>
                         <outlet property="lastName" destination="0eE-8q-A7a" id="fMd-xV-i1x"/>
                         <outlet property="middleName" destination="Z1z-XX-Q0H" id="vGY-IH-6sP"/>

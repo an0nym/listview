@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 
 class ListDataModel: NSObject {
-  var dataModel : ListJsonModel? = nil
+  var dataModel : ListJsonModel! = nil
   
   private static var sharedListDataModel: ListDataModel = {
     let sharedListDataModel = ListDataModel()
