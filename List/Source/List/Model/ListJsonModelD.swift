@@ -31,7 +31,7 @@ class ListJsonModelD : NSObject, NSCoding{
 	 */
 	func toDictionary() -> [String:Any]
 	{
-		let dictionary = [String:Any]()
+		var dictionary = [String:Any]()
 		if results != nil{
 			var dictionaryElements = [[String:Any]]()
 			for resultsElement in results {

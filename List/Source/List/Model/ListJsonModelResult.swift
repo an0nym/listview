@@ -9,10 +9,10 @@ import SwiftyJSON
 class ListJsonModelResult : NSObject, NSCoding{
 
 	var account : String!
-	var businessEmail : AnyObject!
-	var businessMobile : AnyObject!
-	var businessPhone : AnyObject!
-	var email : AnyObject!
+	var businessEmail : String!
+	var businessMobile : String!
+	var businessPhone : String!
+	var email : String!
 	var firstName : String!
 	var fullName : String!
 	var gender : String!
@@ -20,9 +20,9 @@ class ListJsonModelResult : NSObject, NSCoding{
 	var jobTitleDescription : String!
 	var lastName : String!
 	var middleName : String!
-	var mobile : AnyObject!
-	var notes : AnyObject!
-	var phone : AnyObject!
+	var mobile : String!
+	var notes : String!
+	var phone : String!
 	var pictureThumbnailUrl : String!
 
 
@@ -56,7 +56,7 @@ class ListJsonModelResult : NSObject, NSCoding{
 	 */
 	func toDictionary() -> [String:Any]
 	{
-		let dictionary = [String:Any]()
+		var dictionary = [String:Any]()
 		if account != nil{
 			dictionary["Account"] = account
 		}
@@ -115,10 +115,10 @@ class ListJsonModelResult : NSObject, NSCoding{
     @objc required init(coder aDecoder: NSCoder)
 	{
          account = aDecoder.decodeObject(forKey: "Account") as? String
-         businessEmail = aDecoder.decodeObject(forKey: "BusinessEmail") as? AnyObject
-         businessMobile = aDecoder.decodeObject(forKey: "BusinessMobile") as? AnyObject
-         businessPhone = aDecoder.decodeObject(forKey: "BusinessPhone") as? AnyObject
-         email = aDecoder.decodeObject(forKey: "Email") as? AnyObject
+         businessEmail = aDecoder.decodeObject(forKey: "BusinessEmail") as? String
+         businessMobile = aDecoder.decodeObject(forKey: "BusinessMobile") as? String
+         businessPhone = aDecoder.decodeObject(forKey: "BusinessPhone") as? String
+         email = aDecoder.decodeObject(forKey: "Email") as? String
          firstName = aDecoder.decodeObject(forKey: "FirstName") as? String
          fullName = aDecoder.decodeObject(forKey: "FullName") as? String
          gender = aDecoder.decodeObject(forKey: "Gender") as? String
@@ -126,9 +126,9 @@ class ListJsonModelResult : NSObject, NSCoding{
          jobTitleDescription = aDecoder.decodeObject(forKey: "JobTitleDescription") as? String
          lastName = aDecoder.decodeObject(forKey: "LastName") as? String
          middleName = aDecoder.decodeObject(forKey: "MiddleName") as? String
-         mobile = aDecoder.decodeObject(forKey: "Mobile") as? AnyObject
-         notes = aDecoder.decodeObject(forKey: "Notes") as? AnyObject
-         phone = aDecoder.decodeObject(forKey: "Phone") as? AnyObject
+         mobile = aDecoder.decodeObject(forKey: "Mobile") as? String
+         notes = aDecoder.decodeObject(forKey: "Notes") as? String
+         phone = aDecoder.decodeObject(forKey: "Phone") as? String
          pictureThumbnailUrl = aDecoder.decodeObject(forKey: "PictureThumbnailUrl") as? String
 
 	}

@@ -10,6 +10,9 @@ class ListJsonModel : NSObject, NSCoding{
 
 	var d : ListJsonModelD!
 
+  override init() {
+    super.init()
+  }
 
 	/**
 	 * Instantiate the instance using the passed json values to set the properties values
@@ -29,7 +32,7 @@ class ListJsonModel : NSObject, NSCoding{
 	 */
 	func toDictionary() -> [String:Any]
 	{
-		let dictionary = [String:Any]()
+		var dictionary = [String:Any]()
 		if d != nil{
 			dictionary["d"] = d.toDictionary()
 		}
