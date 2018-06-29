@@ -34,7 +34,7 @@ class ListViewController: UIViewController {
     self.title = "List"
     //show loader
     DispatchQueue.main.asyncAfter(deadline: .now()) {
-      self.initLoader()
+      self.initSpinner()
     }
     
     //initiate dataModel
@@ -42,7 +42,7 @@ class ListViewController: UIViewController {
       if (error is NSError) {
         //show failed loader
         DispatchQueue.main.asyncAfter(deadline: .now()) {
-          self.removeLoader()
+          self.removeSpinner()
         }
         //handled failed
       }
@@ -50,7 +50,7 @@ class ListViewController: UIViewController {
         //show success loader
         //succeed
         DispatchQueue.main.asyncAfter(deadline: .now()) {
-          self.removeLoader()
+          self.removeSpinner()
         }
         //reload table
         self.tableView.reloadData()
@@ -75,7 +75,7 @@ class ListViewController: UIViewController {
     }
   }
   
-  func initLoader() {
+  func initSpinner() {
     //initiate loader
     addChildViewController(self.spinner)
     self.spinner.view.frame = view.frame
@@ -83,7 +83,7 @@ class ListViewController: UIViewController {
     self.spinner.didMove(toParentViewController: self)
   }
   
-  func removeLoader() {
+  func removeSpinner() {
     self.spinner.willMove(toParentViewController: nil)
     self.spinner.view.removeFromSuperview()
     self.spinner.removeFromParentViewController()
