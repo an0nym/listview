@@ -2,9 +2,14 @@
 # platform :ios, '9.0'
 
 target 'List' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  inhibit_all_warnings!
   use_frameworks!
 
-  # Pods for List
+  # UI
+  pod 'SnapKit', '~> 4.0.0'
+  
+  # Network and data
+  pod 'Alamofire', '~> 4.7'
+  pod 'SwiftyJSON', '~> 4.0'
 
 end
