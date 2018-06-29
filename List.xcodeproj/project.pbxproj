@@ -14,6 +14,9 @@
 		3DD6189220E5CC9A0060D1C2 /* ListTableHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD6189120E5CC9A0060D1C2 /* ListTableHelper.swift */; };
 		3DD6189420E5CCC90060D1C2 /* EditListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD6189320E5CCC90060D1C2 /* EditListViewController.swift */; };
 		3DD6189620E5CCFF0060D1C2 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD6189520E5CCFF0060D1C2 /* ListViewController.swift */; };
+		3DD6189B20E5D10B0060D1C2 /* ListJsonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD6189820E5D10A0060D1C2 /* ListJsonModel.swift */; };
+		3DD6189C20E5D10B0060D1C2 /* ListJsonModelD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD6189920E5D10A0060D1C2 /* ListJsonModelD.swift */; };
+		3DD6189D20E5D10B0060D1C2 /* ListJsonModelResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD6189A20E5D10A0060D1C2 /* ListJsonModelResult.swift */; };
 		62C4857A52BF8F672C1817CA /* Pods_List.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 430ECE10AA172076A543ACA8 /* Pods_List.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +30,9 @@
 		3DD6189120E5CC9A0060D1C2 /* ListTableHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableHelper.swift; sourceTree = "<group>"; };
 		3DD6189320E5CCC90060D1C2 /* EditListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditListViewController.swift; sourceTree = "<group>"; };
 		3DD6189520E5CCFF0060D1C2 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		3DD6189820E5D10A0060D1C2 /* ListJsonModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListJsonModel.swift; sourceTree = "<group>"; };
+		3DD6189920E5D10A0060D1C2 /* ListJsonModelD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListJsonModelD.swift; sourceTree = "<group>"; };
+		3DD6189A20E5D10A0060D1C2 /* ListJsonModelResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListJsonModelResult.swift; sourceTree = "<group>"; };
 		430ECE10AA172076A543ACA8 /* Pods_List.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_List.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A37B884C7A133A0A88FADB8B /* Pods-List.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-List.release.xcconfig"; path = "Pods/Target Support Files/Pods-List/Pods-List.release.xcconfig"; sourceTree = "<group>"; };
 		DE8637BA42B4869B826416B6 /* Pods-List.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-List.debug.xcconfig"; path = "Pods/Target Support Files/Pods-List/Pods-List.debug.xcconfig"; sourceTree = "<group>"; };
@@ -97,6 +103,7 @@
 			children = (
 				3DD6189520E5CCFF0060D1C2 /* ListViewController.swift */,
 				3DD6189120E5CC9A0060D1C2 /* ListTableHelper.swift */,
+				3DD6189720E5D10A0060D1C2 /* Model */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -107,6 +114,16 @@
 				3DD6189320E5CCC90060D1C2 /* EditListViewController.swift */,
 			);
 			path = EditList;
+			sourceTree = "<group>";
+		};
+		3DD6189720E5D10A0060D1C2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3DD6189820E5D10A0060D1C2 /* ListJsonModel.swift */,
+				3DD6189920E5D10A0060D1C2 /* ListJsonModelD.swift */,
+				3DD6189A20E5D10A0060D1C2 /* ListJsonModelResult.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		617B2A04F0C0DC4A36EDEE26 /* Pods */ = {
@@ -259,8 +276,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DD6189420E5CCC90060D1C2 /* EditListViewController.swift in Sources */,
+				3DD6189D20E5D10B0060D1C2 /* ListJsonModelResult.swift in Sources */,
+				3DD6189B20E5D10B0060D1C2 /* ListJsonModel.swift in Sources */,
 				3DD6189220E5CC9A0060D1C2 /* ListTableHelper.swift in Sources */,
 				3DD6189620E5CCFF0060D1C2 /* ListViewController.swift in Sources */,
+				3DD6189C20E5D10B0060D1C2 /* ListJsonModelD.swift in Sources */,
 				3DD6188820E5CC4C0060D1C2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,7 +429,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QA97LMPB88;
 				INFOPLIST_FILE = List/SupportingFiles/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mehdibadjian.List;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -425,7 +448,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QA97LMPB88;
 				INFOPLIST_FILE = List/SupportingFiles/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mehdibadjian.List;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
