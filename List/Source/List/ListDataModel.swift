@@ -43,6 +43,7 @@ class ListDataModel: NSObject {
     }
   }
   
+  //helper for number of the rows in each section
   func numberOfRowsInSection(section: NSInteger) -> NSInteger {
     if (self.dataModel != nil) {
       return self.dataModel!.d.results.count
@@ -52,10 +53,12 @@ class ListDataModel: NSObject {
     }
   }
   
+  //helper for total number of sections
   func numberOfSections() -> NSInteger {
     return 1
   }
   
+  //helper for checking if profile is complete
   func isCompleteProfile(indexPath : IndexPath) -> Bool {
     let data = self.dataModel?.d.results[indexPath.row]
     if (data!.account.isEmpty ||

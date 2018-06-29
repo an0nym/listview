@@ -13,7 +13,8 @@ class ListViewController: UIViewController {
 
   var tableView = UITableView()
   var listTableHelper : ListTableHelper
-
+  let spinner = SpinnerHelper()
+  
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
     self.listTableHelper = ListTableHelper.init()
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -31,16 +32,27 @@ class ListViewController: UIViewController {
   func configureView () {
     //view title
     self.title = "List"
-    //initiate loader
+    //show loader
+    DispatchQueue.main.asyncAfter(deadline: .now()) {
+      self.initLoader()
+    }
+    
     //initiate dataModel
     ListDataModel.shared().initWithApi() { (error) in
       if (error is NSError) {
         //show failed loader
-        //failed
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+          self.removeLoader()
+        }
+        //handled failed
       }
       else {
         //show success loader
         //succeed
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+          self.removeLoader()
+        }
+        //reload table
         self.tableView.reloadData()
       }
     }
@@ -61,6 +73,20 @@ class ListViewController: UIViewController {
     self.tableView.snp.makeConstraints { (make) in
       make.size.centerX.centerY.equalTo(self.view)
     }
+  }
+  
+  func initLoader() {
+    //initiate loader
+    addChildViewController(self.spinner)
+    self.spinner.view.frame = view.frame
+    self.view.addSubview(self.spinner.view)
+    self.spinner.didMove(toParentViewController: self)
+  }
+  
+  func removeLoader() {
+    self.spinner.willMove(toParentViewController: nil)
+    self.spinner.view.removeFromSuperview()
+    self.spinner.removeFromParentViewController()
   }
 }
 

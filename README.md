@@ -31,7 +31,7 @@ Use code below to install depencancies using Cocoapods
 cocoa install
 ```
 
-Open Lists.xcworkspace to run the project
+Open List.xcworkspace to run the project
 
 
 ## Project compatibility 

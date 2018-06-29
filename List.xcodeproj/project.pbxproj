@@ -21,6 +21,7 @@
 		3DDF857920E5D464002241B8 /* JsonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF857820E5D464002241B8 /* JsonHelper.swift */; };
 		3DDF857B20E5D6B6002241B8 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF857A20E5D6B6002241B8 /* ListTableViewCell.swift */; };
 		3DDF857D20E5DECF002241B8 /* ApiAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF857C20E5DECF002241B8 /* ApiAdapter.swift */; };
+		3DDF857F20E632A2002241B8 /* SpinnerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF857E20E632A2002241B8 /* SpinnerHelper.swift */; };
 		62C4857A52BF8F672C1817CA /* Pods_List.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 430ECE10AA172076A543ACA8 /* Pods_List.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		3DDF857820E5D464002241B8 /* JsonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonHelper.swift; sourceTree = "<group>"; };
 		3DDF857A20E5D6B6002241B8 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		3DDF857C20E5DECF002241B8 /* ApiAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiAdapter.swift; sourceTree = "<group>"; };
+		3DDF857E20E632A2002241B8 /* SpinnerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerHelper.swift; sourceTree = "<group>"; };
 		430ECE10AA172076A543ACA8 /* Pods_List.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_List.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A37B884C7A133A0A88FADB8B /* Pods-List.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-List.release.xcconfig"; path = "Pods/Target Support Files/Pods-List/Pods-List.release.xcconfig"; sourceTree = "<group>"; };
 		DE8637BA42B4869B826416B6 /* Pods-List.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-List.debug.xcconfig"; path = "Pods/Target Support Files/Pods-List/Pods-List.debug.xcconfig"; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			children = (
 				3DDF857820E5D464002241B8 /* JsonHelper.swift */,
 				3DDF857C20E5DECF002241B8 /* ApiAdapter.swift */,
+				3DDF857E20E632A2002241B8 /* SpinnerHelper.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DDF857920E5D464002241B8 /* JsonHelper.swift in Sources */,
+				3DDF857F20E632A2002241B8 /* SpinnerHelper.swift in Sources */,
 				3DD6189420E5CCC90060D1C2 /* EditListViewController.swift in Sources */,
 				3DD6189D20E5D10B0060D1C2 /* ListJsonModelResult.swift in Sources */,
 				3DD6189B20E5D10B0060D1C2 /* ListJsonModel.swift in Sources */,
